@@ -1,0 +1,22 @@
+<p>
+	ingredients works!
+</p>
+<div *ngFor="let ingredient of (ingredients | async)">
+	<div>{{ingredient.name}}</div>
+	<div *ngFor="let table of (ingredient.effects | effectsToRolltables:ingredient.tables); let i = index">
+		<span *ngIf="i === 0">Roll {{table.times}} on Table {{table.key}}.{{table.sameRollText}}</span>
+		<figure>
+			<table>
+				<tr>
+					<th>{{table.dice}}</th>
+					<th>Effect</th>
+				</tr>
+				<tr *ngFor="let result of table.results">
+					<td>{{result.on}}</td>
+					<td>{{result.text}}</td>
+				</tr>
+			</table>
+			<figcaption>Table {{table.key}}</figcaption>
+		</figure>
+	</div>
+</div>

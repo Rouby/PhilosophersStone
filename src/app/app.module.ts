@@ -2,19 +2,51 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
+
+import { PhilosophersStoneRoutingModule } from './app-routing.module';
+
+import { Store, StoreModule } from '@ngrx/store';
+import { RouterStoreModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
+import { EffectsModule } from '@ngrx/effects';
+
+import { reducer } from './reducers';
+
+import * as Effects from './effects';
 
 import { AppComponent } from './app.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
+import { EffectsToRolltablesPipe } from './effects-to-rolltables.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        InventoryComponent,
+        IngredientsComponent,
+        EffectsToRolltablesPipe
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        MaterialModule.forRoot(),
+        PhilosophersStoneRoutingModule,
+
+        StoreModule.provideStore(reducer),
+        RouterStoreModule.connectRouter(),
+        StoreDevtoolsModule.instrumentStore({
+            monitor: useLogMonitor({
+                visible: true,
+                position: 'right'
+            })
+        }),
+        StoreLogMonitorModule,
+        EffectsModule.run(Effects.IngredientsEffects)
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
