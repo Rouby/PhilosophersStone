@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face
+{
+    font-family: Bookinsanity;
+    src: url("assets/fonts/Bookinsanity.otf") format("opentype");
+}
+
+@font-face
+{
+    font-family: ScalySans;
+    src: url("assets/fonts/Scaly Sans.otf") format("opentype");
+}
+
+body
+{
+    font-family: Bookinsanity;
+}

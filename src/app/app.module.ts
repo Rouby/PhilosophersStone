@@ -19,14 +19,16 @@ import * as Effects from './effects';
 import { AppComponent } from './app.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
-import { EffectsToRolltablesPipe } from './effects-to-rolltables.pipe';
+import { RolltablesComponent } from './rolltables/rolltables.component';
+import { RangePipe } from './Rolltables/range.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         InventoryComponent,
         IngredientsComponent,
-        EffectsToRolltablesPipe
+        RolltablesComponent,
+        RangePipe
     ],
     imports: [
         BrowserModule,

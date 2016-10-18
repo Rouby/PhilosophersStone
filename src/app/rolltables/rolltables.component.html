@@ -1,0 +1,23 @@
+<div class="head">
+  <div>{{instruction}}</div>
+  <button md-button (click)="rollOnTables()" *ngIf="primaryTable">Do it!</button>
+</div>
+<div *ngFor="let table of tables">
+	<figure>
+		<table>
+			<thead>
+				<tr>
+					<th>{{table.dice}}</th>
+					<th>Effect</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let result of table.results" [class.highlight]="result.rolled">
+					<td>{{result | range}}</td>
+					<td>{{result.effect}}<span style="float:right">{{result.rolled}}</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<figcaption>Table {{table.key}}</figcaption>
+	</figure>
+</div>

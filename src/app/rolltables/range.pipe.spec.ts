@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { EffectsToRolltablesPipe } from './effects-to-rolltables.pipe';
+import { RangePipe } from './range.pipe';
 
-describe('Pipe: EffectsToRolltables', () => {
+describe('Pipe: Range', () => {
   it('create an instance', () => {
-    let pipe = new EffectsToRolltablesPipe();
+    let pipe = new RangePipe();
     expect(pipe).toBeTruthy();
   });
 });

@@ -1,0 +1,52 @@
+.head
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.highlight
+{
+    outline: 2px solid rgba(88, 24, 13, 1);
+}
+
+table
+{
+    font-family: ScalySans;
+    border-spacing: 0;
+    width: 325px;
+}
+
+tbody tr:nth-child(odd)
+{
+    background-color: #e0e5c1;
+}
+
+td
+{
+    padding: 4px 2px;
+}
+
+td:first-child
+{
+    padding: 4px 6px;
+    white-space: nowrap;
+    width: 1%;
+    text-align: center;
+}
+
+figure
+{
+    display: inline-block;
+}
+
+figure figcaption
+{
+    text-align: center;
+    padding-top: 2px;
+    margin-top: 2px;
+    font-size: 90%;
+    color: rgba(0,0,0,.7);
+    border-top: 2px solid;
+    border-image: linear-gradient(to left, rgba(88, 24, 13, 0) ,rgba(88, 24, 13, 1), rgba(88, 24, 13, 0)) 100% 1;
+}
