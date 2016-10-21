@@ -14,7 +14,12 @@ table
 {
     font-family: ScalySans;
     border-spacing: 0;
-    width: 325px;
+    width: 350px;
+}
+
+thead th:not(:first-child)
+{
+    text-align: left;
 }
 
 tbody tr:nth-child(odd)

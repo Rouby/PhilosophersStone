@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import { AttachedEffect, SomeEffectsOf } from '../model/ingredients';
+import { getEffect } from '../data/effects';
 
 import * as Dice from '../shared/dice';
 
@@ -164,7 +165,16 @@ function reduceEffect(effect: AttachedEffect, tableKeys: {}): ReducedEffect
         case 'single':
             {
                 // TODO replace with effect?
-                text = effect.effect || 'Nothing.';
+                if (effect.effect)
+                {
+                    const applied = getEffect(effect.effect);
+                    if (!applied)
+                        console.error(`No effect matching descriptor ${effect.effect} found!`);
+                    else
+                        text = applied.name;
+                }
+                else
+                    text = 'Nothing';
                 break;
             }
         case 'someOf':

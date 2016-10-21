@@ -165,7 +165,7 @@ export const ingredients: Ingredient[] = [
                 {
                     type: 'single',
                     weight: 15,
-                    effect: 'horrifyingVisage-60ft-10min'
+                    effect: 'horrifyingVisage-60ft-10m'
                 },
                 {
                     type: 'single',
@@ -265,7 +265,7 @@ export const ingredients: Ingredient[] = [
                 },
                 {
                     type: 'single',
-                    effect: 'paralyse-15dc-30s'
+                    effect: 'paralyze-15dc-30s'
                 },
                 {
                     type: 'single',

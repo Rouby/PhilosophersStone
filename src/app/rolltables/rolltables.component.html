@@ -14,7 +14,7 @@
 			<tbody>
 				<tr *ngFor="let result of table.results" [class.highlight]="result.rolled">
 					<td>{{result | range}}</td>
-					<td>{{result.effect}}<span style="float:right">{{result.rolled}}</span></td>
+					<td>{{result.effect}}.<span style="float:right">{{result.rolled}}</span></td>
 				</tr>
 			</tbody>
 		</table>
