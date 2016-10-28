@@ -1,0 +1,12 @@
+<h3>Brewing</h3>
+<md-button-toggle-group name="potion-base">
+	<md-button-toggle value="1">base 1</md-button-toggle>
+  <md-button-toggle value="2">base 2</md-button-toggle>
+  <md-button-toggle value="3">base 3</md-button-toggle>
+</md-button-toggle-group>
+<ol>
+	<li *ngFor="let ingredient of ingredients">
+		{{ingredient.name}} <span (click)="removeIngredient$(ingredient)">[x]</span>
+	</li>
+</ol>
+<button md-raised-button [disabled]="ingredients.length === 0">BREW!</button>

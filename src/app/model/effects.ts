@@ -16,7 +16,6 @@ type EffectParameter =
 
 export interface Effect
 {
-    key: string;
     name: string;
     desc: string;
     regex?: RegExp;

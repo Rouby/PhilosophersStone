@@ -1,3 +1,13 @@
-<p>
-  inventory works!
-</p>
+<md-list dense>
+	<md-list-item *ngFor="let ingredient of (ingredients$ | async)">
+		<button md-mini-fab style="transform: scale(.5);" (click)="addIngredientToKettle(ingredient)">
+      <md-icon class="md-24">add</md-icon>
+    </button>
+		<button md-mini-fab style="transform: scale(.5);" (click)="removeIngredient(ingredient)">
+      <md-icon class="md-24">remove</md-icon>
+    </button>
+		<p>{{ingredient.count}}x {{ingredient.name || 'Unknown'}}</p>
+	</md-list-item>
+</md-list>
+
+<app-brewing-kettle [ingredients]="ingredientsInKettle$ | async" (removeIngredient)="removeIngredientFromKettle($event)"></app-brewing-kettle>

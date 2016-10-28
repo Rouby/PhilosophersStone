@@ -6,6 +6,11 @@ export const ingredients: Ingredient[] = [
         name: 'Feather of an Angel',
         desc: '',
         obtainedFrom: ['Deva', 'Planetar', 'Solar'],
+        color: {
+            rgb: '#fcff84',
+            strength: .5
+        },
+        visuals: [],
         effect: {
             type: 'someOf',
             same: 'ignore',
@@ -58,6 +63,11 @@ export const ingredients: Ingredient[] = [
         name: 'Eye of a Celestial',
         desc: '',
         obtainedFrom: ['Planetar', 'Solar'],
+        color: {
+            rgb: '#8ce2ff',
+            strength: .6
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -84,6 +94,11 @@ export const ingredients: Ingredient[] = [
         name: 'Ear of a Greater Angel',
         desc: '',
         obtainedFrom: ['Planetar', 'Solar'],
+        color: {
+            rgb: '#ffa8fd',
+            strength: .7
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -105,6 +120,11 @@ export const ingredients: Ingredient[] = [
         name: 'Antenna of an Ankheg',
         desc: '',
         obtainedFrom: ['Ankheg'],
+        color: {
+            rgb: '#7b5757',
+            strength: .3
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -130,6 +150,11 @@ export const ingredients: Ingredient[] = [
         name: 'Chippings of an Azer',
         desc: '',
         obtainedFrom: ['Azer'],
+        color: {
+            rgb: '#fb0909',
+            strength: .6
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -154,6 +179,11 @@ export const ingredients: Ingredient[] = [
         name: 'Banshees Plasmn',
         desc: '',
         obtainedFrom: ['Banshee'],
+        color: {
+            rgb: '#d6d6d6',
+            strength: .5
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -185,6 +215,11 @@ export const ingredients: Ingredient[] = [
         name: 'Gullet of a Basilisk',
         desc: '',
         obtainedFrom: ['Basilisk'],
+        color: {
+            rgb: '#98b097',
+            strength: .5
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -207,6 +242,11 @@ export const ingredients: Ingredient[] = [
         name: 'Tongue of a Behir',
         desc: '',
         obtainedFrom: ['Behir'],
+        color: {
+            rgb: '#648597',
+            strength: .5
+        },
+        visuals: [],
         effect: {
             type: 'someOf',
             count: 2,
@@ -235,6 +275,11 @@ export const ingredients: Ingredient[] = [
         name: 'Central-Eye of a Beholder',
         desc: '',
         obtainedFrom: ['Beholder'],
+        color: {
+            rgb: '#bf44a7',
+            strength: .5
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -256,6 +301,11 @@ export const ingredients: Ingredient[] = [
         name: 'Eyestalk of a Beholder',
         desc: '',
         obtainedFrom: ['Beholder'],
+        color: {
+            rgb: '#bfc857',
+            strength: .2
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -321,6 +371,11 @@ export const ingredients: Ingredient[] = [
         name: 'Heart of Hruggek',
         desc: '',
         obtainedFrom: ['Bugbear Chief'],
+        color: {
+            rgb: '#910000',
+            strength: .8
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [
@@ -342,6 +397,11 @@ export const ingredients: Ingredient[] = [
         name: 'Lung of a Chuul',
         desc: '',
         obtainedFrom: ['Chuul'],
+        color: {
+            rgb: '#21188b',
+            strength: .5
+        },
+        visuals: [],
         effect: {
             type: 'oneOf',
             effects: [

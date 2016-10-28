@@ -6,12 +6,17 @@ export interface Ingredient
     obtainedFrom: string[];
     effect: AttachedEffect;
     reactions: Reaction[];
+    color: {
+        rgb: string;
+        strength: number;
+    };
+    visuals: string[];
 }
 
 export interface Reaction
 {
     otherIngredient: string;
-    effects: AttachedEffect;
+    effect: AttachedEffect;
 }
 
 export type AttachedEffect = SingleEffect | OneEffectOf | SomeEffectsOf | AllEffectsOf;
@@ -45,11 +50,4 @@ export interface AllEffectsOf extends BaseAttachedEffect
 {
     type: 'allOf';
     effects: AttachedEffect[];
-}
-
-export interface Effect
-{
-    key: string;
-    name: string;
-    desc: string;
 }

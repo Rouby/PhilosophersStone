@@ -1,3 +1,5 @@
+import 'rxjs/rx';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +23,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { RolltablesComponent } from './rolltables/rolltables.component';
 import { RangePipe } from './Rolltables/range.pipe';
+import { BrewingKettleComponent } from './brewing-kettle/brewing-kettle.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +31,8 @@ import { RangePipe } from './Rolltables/range.pipe';
         InventoryComponent,
         IngredientsComponent,
         RolltablesComponent,
-        RangePipe
+        RangePipe,
+        BrewingKettleComponent
     ],
     imports: [
         BrowserModule,

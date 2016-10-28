@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 import { State } from '../reducers';
+import { AddIngredientAction } from '../actions/inventory';
 
 @Component({
     selector: 'app-ingredients',
@@ -22,4 +23,8 @@ export class IngredientsComponent implements OnInit
     {
     }
 
+    addToInventory(ingredient)
+    {
+        this.store.dispatch(new AddIngredientAction(ingredient.key));
+    }
 }
