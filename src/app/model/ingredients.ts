@@ -2,7 +2,7 @@ export interface Ingredient
 {
     key: string;
     name: string;
-    desc: string;
+    desc: { dc?: number; text: string; }[];
     obtainedFrom: string[];
     effect: AttachedEffect;
     reactions: Reaction[];

@@ -4,7 +4,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'angelFeather',
         name: 'Feather of an Angel',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Deva', 'Planetar', 'Solar'],
         color: {
             rgb: '#fcff84',
@@ -61,7 +66,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'celestialEye',
         name: 'Eye of a Celestial',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Planetar', 'Solar'],
         color: {
             rgb: '#8ce2ff',
@@ -92,7 +102,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'angelEar',
         name: 'Ear of a Greater Angel',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Planetar', 'Solar'],
         color: {
             rgb: '#ffa8fd',
@@ -118,7 +133,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'ankhegAntenna',
         name: 'Antenna of an Ankheg',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Ankheg'],
         color: {
             rgb: '#7b5757',
@@ -148,7 +168,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'azerChippings',
         name: 'Chippings of an Azer',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Azer'],
         color: {
             rgb: '#fb0909',
@@ -177,7 +202,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'bansheePlasmn',
         name: 'Banshees Plasmn',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Banshee'],
         color: {
             rgb: '#d6d6d6',
@@ -213,7 +243,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'basiliskGullet',
         name: 'Gullet of a Basilisk',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Basilisk'],
         color: {
             rgb: '#98b097',
@@ -240,7 +275,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'behirTongue',
         name: 'Tongue of a Behir',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Behir'],
         color: {
             rgb: '#648597',
@@ -273,7 +313,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'beholderCentralEye',
         name: 'Central-Eye of a Beholder',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Beholder'],
         color: {
             rgb: '#bf44a7',
@@ -299,7 +344,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'beholderEyestalk',
         name: 'Eyestalk of a Beholder',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Beholder'],
         color: {
             rgb: '#bfc857',
@@ -369,7 +419,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'bugbearHeart',
         name: 'Heart of Hruggek',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Bugbear Chief'],
         color: {
             rgb: '#910000',
@@ -395,7 +450,12 @@ export const ingredients: Ingredient[] = [
     {
         key: 'chuulLung',
         name: 'Lung of a Chuul',
-        desc: '',
+        desc: [
+            {
+                dc: 12,
+                text: 'This ingredient is used in ...'
+            }
+        ],
         obtainedFrom: ['Chuul'],
         color: {
             rgb: '#21188b',

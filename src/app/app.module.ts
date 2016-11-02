@@ -24,6 +24,7 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
 import { RolltablesComponent } from './rolltables/rolltables.component';
 import { RangePipe } from './Rolltables/range.pipe';
 import { BrewingKettleComponent } from './brewing-kettle/brewing-kettle.component';
+import { DescribePipe } from './ingredients/describe.pipe';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { BrewingKettleComponent } from './brewing-kettle/brewing-kettle.componen
         IngredientsComponent,
         RolltablesComponent,
         RangePipe,
-        BrewingKettleComponent
+        BrewingKettleComponent,
+        DescribePipe
     ],
     imports: [
         BrowserModule,

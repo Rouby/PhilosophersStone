@@ -22,6 +22,7 @@ export class IngredientsComponent implements OnInit
     
     activePage: number = 0;
     direction: number = 1;
+    zoom: number = 1;
 
     constructor(private store: Store<State>) { }
 
