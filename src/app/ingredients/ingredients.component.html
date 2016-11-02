@@ -1,5 +1,23 @@
-<h1>Ingredients</h1>
-<div style="display: flex; flex-wrap: wrap; width: 1300px;">
+<div class="book">
+	<div class="book-page" *ngFor="let ingredient of (ingredients | async); let page = index"
+		 [style.zIndex]="page - activePage === -1 && direction === 1 ? 101 : (100 - (page - activePage > 0 ? (page - activePage) : -(page - activePage)))" 
+		 [style.transform]="activePage > page ? 'rotateY(-180deg)' : null">
+		<div class="frontside" (click)="direction = 1; activePage = activePage + direction">
+			<h2>{{ingredient[0].name}}</h2>
+			<p class="obtainedFrom">Obtainable from: {{ingredient[0]?.obtainedFrom.join(', ')}}</p>
+			<p class="desc">{{ingredient[0]?.desc || 'No description'}}</p>
+			<footer>{{page * 2 + 1}} of {{(ingredients | async).length * 2}}</footer>
+		</div>
+		<div class="backside" (click)="direction = -1; activePage = activePage + direction">
+			<h2>{{ingredient[1]?.name}}</h2>
+			<p class="obtainedFrom">Obtainable from: {{ingredient[1]?.obtainedFrom.join(', ')}}</p>
+			<p class="desc">{{ingredient[1]?.desc || 'No description'}}</p>
+			<footer>{{page * 2 + 2}} of {{(ingredients | async).length * 2}}</footer>
+		</div>
+	</div>
+</div>
+
+<!--<div style="display: flex; flex-wrap: wrap; width: 1300px;">
 	<md-card *ngFor="let ingredient of (ingredients | async)" style="margin: 8px;">
 		<md-card-title>{{ingredient.name}}</md-card-title>
 		<md-card-subtitle>Obtainable from: {{ingredient.obtainedFrom.join(', ')}}</md-card-subtitle>
@@ -10,4 +28,4 @@
 			<button md-button (click)="addToInventory(ingredient)">ADD TO INVENTORY</button>
 		</md-card-actions>
 	</md-card>
-</div>
+</div>-->

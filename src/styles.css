@@ -9,8 +9,32 @@
 
 @font-face
 {
+    font-family: MrEavesSmallCaps;
+    src: url("assets/fonts/Mr Eaves Small Caps.otf") format("opentype");
+}
+
+@font-face
+{
+    font-family: NodestoCapsCondensed;
+    src: url("assets/fonts/Nodesto Caps Condensed.otf") format("opentype");
+}
+
+@font-face
+{
     font-family: ScalySans;
     src: url("assets/fonts/Scaly Sans.otf") format("opentype");
+}
+
+@font-face
+{
+    font-family: SolberaImitation;
+    src: url("assets/fonts/Solbera Imitation.otf") format("opentype");
+}
+
+@font-face
+{
+    font-family: ZatannaMisdirection;
+    src: url("assets/fonts/Zatanna Misdirection.otf") format("opentype");
 }
 
 body
