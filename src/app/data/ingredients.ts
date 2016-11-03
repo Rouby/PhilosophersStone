@@ -6,8 +6,16 @@ export const ingredients: Ingredient[] = [
         name: 'Feather of an Angel',
         desc: [
             {
-                dc: 12,
-                text: 'This ingredient is used in ...'
+                dc: 18,
+                text: 'Angels are formed from the astral essence of benevolent gods. They are beeings of order and law, and follow the commands of their gods to the letter. The feathers of an Angel can be used by skilled alchemists to harness some of the power. Potions brewed with this ingredient are often associated with flight or resistance to radiant damage.'
+            },
+            {
+                dc: 14,
+                text: 'Angels are almost always good beeings. The feathers from any Angel can be used in the brewing of powerful potions. Most likely the potion with an Angels feather will grant flight.'
+            },
+            {
+                dc: 10,
+                text: 'Angels can fly. So using their feathers *might* transition that power to the potion brewed.'
             }
         ],
         obtainedFrom: ['Deva', 'Planetar', 'Solar'],

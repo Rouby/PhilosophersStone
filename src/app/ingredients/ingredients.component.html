@@ -6,13 +6,13 @@
 		<div class="frontside" (click)="direction = 1; activePage = activePage + direction">
 			<h2>{{ingredient[0].name}}</h2>
 			<p class="obtainedFrom">Obtainable from: {{ingredient[0]?.obtainedFrom.join(', ')}}</p>
-			<p class="desc">{{ingredient[0]?.desc | describe:13}}</p>
+			<p class="desc" app-markdown>{{ingredient[0]?.desc | describe:13}}</p>
 			<footer>{{page * 2 + 1}} of {{(ingredients | async).length * 2}}</footer>
 		</div>
 		<div class="backside" (click)="direction = -1; activePage = activePage + direction">
 			<h2>{{ingredient[1]?.name}}</h2>
 			<p class="obtainedFrom">Obtainable from: {{ingredient[1]?.obtainedFrom.join(', ')}}</p>
-			<p class="desc">{{ingredient[1]?.desc | describe:13}}</p>
+			<p class="desc" app-markdown>{{ingredient[1]?.desc | describe:13}}</p>
 			<footer>{{page * 2 + 2}} of {{(ingredients | async).length * 2}}</footer>
 		</div>
 	</div>
