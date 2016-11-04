@@ -1,0 +1,14 @@
+<app-book-page>
+  <ng-content select="[cover]"></ng-content>
+</app-book-page>
+<app-book-page *ngFor="let contentEntries of contentChunks">
+  <h2>Index</h2>
+  <ol>
+    <li *ngFor="let entry of contentEntries" (click)="turnToPage($event, entry.page)">
+      <span>{{entry.heading}}</span>
+      <span></span>
+      <span>p. {{entry.page}}</span>
+    </li>
+  </ol>
+</app-book-page>
+<ng-content></ng-content>

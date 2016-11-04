@@ -1,0 +1,29 @@
+:host
+{
+    display: block;
+    width: 6in;
+    height: 4.25in;
+    perspective: 2000px;
+    font-family: NodestoCapsCondensed;
+    position: relative;
+}
+
+ol
+{
+    list-style: none;
+    padding: 0 20px;
+}
+
+li
+{
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+li span:nth-child(2)
+{
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dotted black;
+}

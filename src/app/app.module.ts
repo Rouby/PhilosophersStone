@@ -26,6 +26,8 @@ import { RangePipe } from './Rolltables/range.pipe';
 import { BrewingKettleComponent } from './brewing-kettle/brewing-kettle.component';
 import { DescribePipe } from './ingredients/describe.pipe';
 import { MarkdownComponent } from './markdown/markdown.component';
+import { BookComponent } from './book/book.component';
+import { BookPageComponent } from './book/book-page/book-page.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,9 @@ import { MarkdownComponent } from './markdown/markdown.component';
         RangePipe,
         BrewingKettleComponent,
         DescribePipe,
-        MarkdownComponent
+        MarkdownComponent,
+        BookComponent,
+        BookPageComponent
     ],
     imports: [
         BrowserModule,

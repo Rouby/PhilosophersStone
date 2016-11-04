@@ -1,0 +1,79 @@
+:host
+{
+    width: 50%;
+    height: 100%;
+    margin-left: 50%;
+    transform: rotateY(0deg);
+    transform-origin: left;
+    transform-style: preserve-3d;
+    position: absolute;
+
+    transition: transform cubic-bezier(0.39, 0.575, 0.565, 1) .25s;
+}
+
+footer
+{
+    position: absolute;
+    bottom: 2px;
+    font-size: .8em;
+}
+
+:host:nth-child(odd) footer
+{
+    right: 5px;
+}
+
+:host:nth-child(even) footer
+{
+    left: 5px;
+}
+
+.page
+{
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    backface-visibility: hidden;
+    background-color: rgb(255,255,245);
+    border: 1px solid rgba(0,0,0,.46);
+    padding: 0 5px;
+}
+
+.page:after
+{
+    background-color: gray;
+    background-image: -webkit-linear-gradient(hsla(0,0%,100%,.25), hsla(0,0%,0%,.25));
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 2.98in;
+    width: 2px;
+    transform: rotateY(-90deg);
+}
+
+.page p
+{
+    font-family: ZatannaMisdirection;
+}
+
+.page:first-letter
+{
+    font-family: SolberaImitation;
+    font-size: 1.5em;
+}
+
+:host:nth-child(odd) .page
+{
+    transform: translateZ(1px);
+    /*border-radius: 0 10px 10px 0;*/
+    border-right: 2px solid rgba(0,0,0,.76);
+    border-left: 1px solid rgba(0,0,0,.1);
+}
+
+:host:nth-child(even) .page
+{
+    transform: rotateY(180deg) translateZ(1px);
+    /*border-radius: 10px 0 0 10px;*/
+    border-left: 2px solid rgba(0,0,0,.76);
+    border-right: 1px solid rgba(0,0,0,.1);
+}

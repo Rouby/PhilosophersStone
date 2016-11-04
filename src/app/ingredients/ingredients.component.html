@@ -1,22 +1,14 @@
-<input type="range" min="1" max="2" step="0.1" [(ngModel)]="zoom" />
-<div class="book" [style.zoom]="zoom">
-	<div class="book-page" *ngFor="let ingredient of (ingredients | async); let page = index"
-		 [style.zIndex]="page - activePage === -1 && direction === 1 ? 101 : (100 - (page - activePage > 0 ? (page - activePage) : -(page - activePage)))" 
-		 [style.transform]="activePage > page ? 'rotateY(-180deg)' : null">
-		<div class="frontside" (click)="direction = 1; activePage = activePage + direction">
-			<h2>{{ingredient[0].name}}</h2>
-			<p class="obtainedFrom">Obtainable from: {{ingredient[0]?.obtainedFrom.join(', ')}}</p>
-			<p class="desc" app-markdown>{{ingredient[0]?.desc | describe:13}}</p>
-			<footer>{{page * 2 + 1}} of {{(ingredients | async).length * 2}}</footer>
-		</div>
-		<div class="backside" (click)="direction = -1; activePage = activePage + direction">
-			<h2>{{ingredient[1]?.name}}</h2>
-			<p class="obtainedFrom">Obtainable from: {{ingredient[1]?.obtainedFrom.join(', ')}}</p>
-			<p class="desc" app-markdown>{{ingredient[1]?.desc | describe:13}}</p>
-			<footer>{{page * 2 + 2}} of {{(ingredients | async).length * 2}}</footer>
-		</div>
+<input type="range" min="1" max="2" step="0.001" [(ngModel)]="zoom" />
+<app-book [style.zoom]="zoom">
+	<div cover>
+		<h1>Book of Ingredients</h1>
 	</div>
-</div>
+	<app-book-page *ngFor="let ingredient of (ingredients | async);" [heading]="ingredient.name">
+		<h2>{{ingredient.name}}</h2>
+		<p class="obtainedFrom">Obtainable from: {{ingredient.obtainedFrom.join(', ')}}</p>
+		<p app-markdown>{{ingredient.desc | describe:13}}</p>
+	</app-book-page>
+</app-book>
 
 <!--<div style="display: flex; flex-wrap: wrap; width: 1300px;">
 	<md-card *ngFor="let ingredient of (ingredients | async)" style="margin: 8px;">
