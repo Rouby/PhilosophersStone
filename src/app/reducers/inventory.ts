@@ -1,9 +1,12 @@
 import { combineReducers, ActionReducer } from '@ngrx/store';
 import { Action, ActionType } from '../actions/inventory';
+import { Potion } from '../model/potions';
+import { PotionBase } from '../model/ingredients';
 
 interface State
 {
     ingredients: IngredientsState;
+    potions: PotionsState;
     kettle: KettleState;
 }
 
@@ -16,6 +19,11 @@ interface IngredientInInventory
 {
     key: string;
     count: number;
+}
+
+interface PotionsState extends Array<Potion>
+{
+
 }
 
 interface KettleState
@@ -87,6 +95,32 @@ const ingredients: ActionReducer<IngredientsState> = (state: IngredientsState = 
     }
 };
 
+const potions: ActionReducer<PotionsState> = (state: PotionsState = [], action: Action) =>
+{
+    switch (action.type)
+    {
+        case ActionType.BREW_POTION:
+            {
+                return [...state, action.payload as Potion];
+            }
+        default:
+            return state;
+    }
+};
+
+const kettleBase: ActionReducer<PotionBase> = (state: PotionBase, action: Action) =>
+{
+    switch (action.type)
+    {
+        case ActionType.CHANGE_POTION_BASE:
+            {
+                return action.payload as PotionBase;
+            }
+        default:
+            return state;
+    }
+};
+
 const kettleIngredients: ActionReducer<KettleIngredientsState> = (state: KettleIngredientsState = [], action: Action) =>
 {
     switch (action.type)
@@ -101,6 +135,10 @@ const kettleIngredients: ActionReducer<KettleIngredientsState> = (state: KettleI
                 const payload = action.payload as { index: number; };
                 return state.filter((_, idx) => idx !== payload.index);
             }
+        case ActionType.BREW_POTION:
+            {
+                return [];
+            }
         default:
             return state;
     }
@@ -108,7 +146,9 @@ const kettleIngredients: ActionReducer<KettleIngredientsState> = (state: KettleI
 
 const reducer = combineReducers({
     ingredients,
+    potions,
     kettle: combineReducers({
+        base: kettleBase,
         ingredients: kettleIngredients
     })
 });

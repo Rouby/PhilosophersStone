@@ -29,6 +29,13 @@ import { MarkdownComponent } from './markdown/markdown.component';
 import { BookComponent } from './book/book.component';
 import { BookPageComponent } from './book/book-page/book-page.component';
 
+import { Injectable } from '@angular/core';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { ExplainEffectPipe } from './inventory/explain-effect.pipe';
+
+@Injectable()
+export class AppGestureConfig extends HammerGestureConfig { }
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -40,7 +47,8 @@ import { BookPageComponent } from './book/book-page/book-page.component';
         DescribePipe,
         MarkdownComponent,
         BookComponent,
-        BookPageComponent
+        BookPageComponent,
+        ExplainEffectPipe
     ],
     imports: [
         BrowserModule,
@@ -60,7 +68,7 @@ import { BookPageComponent } from './book/book-page/book-page.component';
         StoreLogMonitorModule,
         EffectsModule.run(Effects.IngredientsEffects)
     ],
-    providers: [],
+    providers: [{ provide: HAMMER_GESTURE_CONFIG, useClass: AppGestureConfig }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

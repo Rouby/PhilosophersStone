@@ -3,7 +3,7 @@
 	<div cover>
 		<h1>Book of Ingredients</h1>
 	</div>
-	<app-book-page *ngFor="let ingredient of (ingredients | async);" [heading]="ingredient.name">
+	<app-book-page *ngFor="let ingredient of (ingredients$ | async);" [heading]="ingredient.name">
 		<h2>{{ingredient.name}}</h2>
 		<p class="obtainedFrom">Obtainable from: {{ingredient.obtainedFrom.join(', ')}}</p>
 		<p app-markdown>{{ingredient.desc | describe:13}}</p>

@@ -1,0 +1,30 @@
+.ingredient-drop
+{
+    min-height: 64px;
+    transition: border 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    border: 2px dashed #fff;
+}
+
+.ingredient-drop.hint
+{
+    border: 2px dashed #99f;
+}
+
+.kettle-brewing
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brew-message-container
+{
+    position: relative;
+    flex: 1;
+    height: 22px;
+}
+
+.brew-message
+{
+    position: absolute;
+}

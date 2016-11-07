@@ -1,12 +1,30 @@
 <h3>Brewing</h3>
-<md-button-toggle-group name="potion-base">
-	<md-button-toggle value="1">base 1</md-button-toggle>
-  <md-button-toggle value="2">base 2</md-button-toggle>
-  <md-button-toggle value="3">base 3</md-button-toggle>
-</md-button-toggle-group>
-<ol>
-	<li *ngFor="let ingredient of ingredients">
-		{{ingredient.name}} <span (click)="removeIngredient$(ingredient)">[x]</span>
-	</li>
-</ol>
-<button md-raised-button [disabled]="ingredients.length === 0">BREW!</button>
+<div [ngSwitch]="brewState">
+	<div *ngSwitchDefault>
+		<div>1. Select a potion base:</div>
+		<md-button-toggle-group [value]="potionBase" name="potion-base" (change)="setPotionBase($event.value)">
+			<md-button-toggle value="acidic">acidic</md-button-toggle>
+			<md-button-toggle value="basic">basic</md-button-toggle>
+			<md-button-toggle value="mundane">mundane</md-button-toggle>
+			<md-button-toggle value="unworldly">unworldly</md-button-toggle>
+		</md-button-toggle-group>
+		<div>2. Drop ingredients here:</div>
+		<ol class="ingredient-drop" [class.hint]="hintDropzone" (dragover)="dragIngredientOver($event)" (drop)="dropIngredient($event)">
+			<li *ngFor="let ingredient of ingredients">
+				{{ingredient.name}} <span (click)="removeIngredient$(ingredient)">[x]</span>
+			</li>
+		</ol>
+		<div>3. Try to brew something:</div>
+		<button md-raised-button [disabled]="ingredients.length === 0" (click)="startBrewing()">BREW!</button>
+	</div>
+	<div *ngSwitchCase="'brewing'" class="kettle-brewing">
+		<md-progress-circle mode="determinate" [value]="countdownProgress$ | async"></md-progress-circle>
+		<div class="brew-message-container">
+			<div *ngFor="let msg of (countdownMessages$ | async)" class="brew-message" [@flyInOut]="'in'">{{msg.text}}</div>
+		</div>
+	</div>
+	<div *ngSwitchCase="'naming'">
+		<md-input #nameInput placeholder="Name of your new potion"></md-input>
+		<button md-raised-button (click)="setPotionName(nameInput.value)">NAME!</button>
+	</div>
+</div>

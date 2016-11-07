@@ -1,13 +1,31 @@
-<md-list dense>
-	<md-list-item *ngFor="let ingredient of (ingredients$ | async)">
-		<button md-mini-fab style="transform: scale(.5);" (click)="addIngredientToKettle(ingredient)">
-      <md-icon class="md-24">add</md-icon>
-    </button>
-		<button md-mini-fab style="transform: scale(.5);" (click)="removeIngredient(ingredient)">
-      <md-icon class="md-24">remove</md-icon>
-    </button>
-		<p>{{ingredient.count}}x {{ingredient.name || 'Unknown'}}</p>
-	</md-list-item>
-</md-list>
-
-<app-brewing-kettle [ingredients]="ingredientsInKettle$ | async" (removeIngredient)="removeIngredientFromKettle($event)"></app-brewing-kettle>
+<div class="inventory" style="width: 1000px">
+	<div *ngFor="let potion of (potions$ | async)" class="potion" tabindex="1" (focus)="selectedPotion = potion" (blur)="selectedPotion = null">
+		<div class="potion-icon">
+			<img [src]="potion.icon || '/assets/icons/potion.svg'" width="64" />
+		</div>
+		<div class="potion-text">{{potion.name || 'Unknown potion'}}</div>
+		<div class="potion-details" #details [@potionDetails]="selectedPotion === potion ? 'visible' : 'hidden'">
+			<div class="potion-icon">
+				<img [src]="potion.icon || '/assets/icons/potion.svg'" [@potionDetailsIcon]="selectedPotion === potion ? 'visible' : 'hidden'"
+					width="64" />
+			</div>
+			<div class="text" [@potionDetailsText]="selectedPotion === potion ? 'visible' : 'hidden'">
+				<h3>{{potion.name || 'Unknown potion'}}</h3>
+				<div *ngFor="let effect of potion.effects" [md-tooltip]="(effect | explainEffect).desc || 'No description'">{{(effect | explainEffect).name}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="inventory" style="width: 1000px">
+	<div *ngFor="let ingredient of (ingredients$ | async)" class="ingredient" draggable="true" (dragstart)="startIngredientDrag($event, ingredient.key)"
+		(dragend)="endIngredientDrag($event)">
+		<div class="ingredient-icon">
+			<img [src]="ingredient.icon || '/assets/icons/herbal-spa-treatment-leaves.svg'" width="64" />
+			<div class="ingredient-amount">{{ingredient.count}}x</div>
+		</div>
+		<div class="ingredient-text">{{ingredient.name || 'Unknown'}}</div>
+	</div>
+</div>
+<app-brewing-kettle [ingredients]="ingredientsInKettle$ | async" [potionBase]="potionBaseInKettle$ | async" [hintDropzone]="hintDropzone"
+	(addIngredient)="addIngredientToKettle($event)" (removeIngredient)="removeIngredientFromKettle($event)" (changePotionBase)="changePotionBaseInKettle($event)"
+	(brewPotion)="brewPotionFromKettle($event)"></app-brewing-kettle>

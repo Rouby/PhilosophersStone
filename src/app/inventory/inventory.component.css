@@ -1,0 +1,88 @@
+.inventory
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.potion,
+.ingredient
+{
+    flex: 0 0 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 5px;
+}
+
+.potion
+{
+    position: relative;
+}
+
+.potion-details
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 10;
+    border: 1px solid rgba(0,0,0,.67);
+    overflow: hidden;
+}
+
+.potion-details h3
+{
+    font-family: NodestoCapsCondensed;
+    font-weight: normal;
+}
+
+.potion-details .potion-icon
+{
+    float: left;
+    margin: 0 10px;
+    width: 95px;
+    height: 88px;
+}
+
+.potion-details .potion-icon img
+{
+    transform-origin: top left;
+}
+
+.potion-details .text
+{
+    text-align: justify;
+    width: 344px;
+    min-height: 100px;
+    padding: 5px 10px;
+}
+
+.potion-text,
+.ingredient-text
+{
+    text-align: center;
+    font-family: NodestoCapsCondensed;
+}
+
+.potion-icon,
+.ingredient-icon
+{
+    position: relative;
+}
+
+.ingredient-icon img
+{
+    -webkit-user-drag: none; 
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.ingredient-amount
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}

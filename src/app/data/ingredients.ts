@@ -19,6 +19,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Deva', 'Planetar', 'Solar'],
+        potionBase: 'basic',
         color: {
             rgb: '#fcff84',
             strength: .5
@@ -81,6 +82,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Planetar', 'Solar'],
+        potionBase: 'basic',
         color: {
             rgb: '#8ce2ff',
             strength: .6
@@ -117,6 +119,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Planetar', 'Solar'],
+        potionBase: 'basic',
         color: {
             rgb: '#ffa8fd',
             strength: .7
@@ -148,6 +151,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Ankheg'],
+        potionBase: 'acidic',
         color: {
             rgb: '#7b5757',
             strength: .3
@@ -217,6 +221,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Banshee'],
+        potionBase: 'unworldly',
         color: {
             rgb: '#d6d6d6',
             strength: .5
@@ -258,6 +263,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Basilisk'],
+        potionBase: 'acidic',
         color: {
             rgb: '#98b097',
             strength: .5
@@ -328,6 +334,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Beholder'],
+        potionBase: 'unworldly',
         color: {
             rgb: '#bf44a7',
             strength: .5
@@ -359,6 +366,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Beholder'],
+        potionBase: 'unworldly',
         color: {
             rgb: '#bfc857',
             strength: .2
@@ -434,6 +442,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Bugbear Chief'],
+        potionBase: 'mundane',
         color: {
             rgb: '#910000',
             strength: .8
@@ -465,6 +474,7 @@ export const ingredients: Ingredient[] = [
             }
         ],
         obtainedFrom: ['Chuul'],
+        potionBase: 'mundane',
         color: {
             rgb: '#21188b',
             strength: .5

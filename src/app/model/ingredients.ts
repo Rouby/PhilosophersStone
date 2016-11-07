@@ -3,6 +3,8 @@ export interface Ingredient
     key: string;
     name: string;
     desc: { dc?: number; text: string; }[];
+    icon?: string;
+    potionBase?: PotionBase;
     obtainedFrom: string[];
     effect: AttachedEffect;
     reactions: Reaction[];
@@ -12,6 +14,8 @@ export interface Ingredient
     };
     visuals: string[];
 }
+
+export type PotionBase = 'acidic' | 'basic' | 'mundane' | 'unworldly';
 
 export interface Reaction
 {

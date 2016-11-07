@@ -41,3 +41,8 @@ body
 {
     font-family: Bookinsanity;
 }
+
+.md-overlay-container
+{
+    z-index: 1000 !important;
+}

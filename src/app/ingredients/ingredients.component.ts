@@ -15,7 +15,7 @@ import { AddIngredientAction } from '../actions/inventory';
 })
 export class IngredientsComponent implements OnInit
 {
-    ingredients = this.store
+    ingredients$ = this.store
         .select(s => s.ingredients)
         .map(ings => ings.map(ing => Object.assign({ tables: {} }, ing)));
     
